@@ -1,0 +1,12 @@
+1.function overloading(double int char)
+default argument,ambiguty error
+using reference
+
+2.find the area of circle,rectangle and hexagon using function overloading
+
+3.compute tax for n employees with respect to the salary use contructor overloading and this pointer to assign the salary
+
+4.program which takes time as input perform increment and decrement using operator overload
+ 
+5.program to perform complex arthmatic operations using arithmatic overloading
+

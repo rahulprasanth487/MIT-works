@@ -1,0 +1,9 @@
+1. base class-vehicle, derived class-car,bus,boat override method message which contains the vehicle type and compute the price of the vehicle
+
+2. class Bank and derivd class ind,sbi,iob override method interest for fixed deposit
+
+3.write a program to swap to 2 numbers using templates
+
+4.find min max values and sorting operations using templates
+
+5.design a calculator using a templates

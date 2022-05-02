@@ -1,0 +1,14 @@
+1.write a program ARMSTRONG NUMBER IN A GIVEN INTERVAL
+
+2.string is palindrome or not
+
+3.fibonacci series
+
+4.recursive to find the factorial of a number
+
+5.greatest of 2 numbers using recursion
+
+6.Array of integers and sort them
+
+7.using structure, calculate students grade using marks
+

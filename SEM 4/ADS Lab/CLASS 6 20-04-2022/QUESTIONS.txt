@@ -1,0 +1,9 @@
+1. Write a program to create library management system and overload stream instruction operator  and extraction (output) operator
+ to i/o details of book and find fine using friend function
+
+
+2.Design E-wallet deposit money using friend function 
+
+3.find the area,perimeter,volume,surface area using multilevel inheritance
+
+4.Bank management use simple inheritance to find the interest of deposited money
