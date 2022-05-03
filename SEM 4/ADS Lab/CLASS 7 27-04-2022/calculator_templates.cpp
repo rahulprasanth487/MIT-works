@@ -21,8 +21,8 @@ class calculator
             T minus(){return a-b;}
             T multiply(){return a*b;}
             T divide(){return a/b;}
-            T power(){return pow(a,b);}
-            T sqr_root(){return sqrt(n);}
+            void power(){cout<< pow(a,b)<<endl;}
+            void sqr_root(){cout<< sqrt(n)<<endl;}
 };
 
 
@@ -63,7 +63,7 @@ void call()
                         break;
                   
                   case 5:
-                        cout << obj1.power() << endl;
+                        obj1.power();
                         break;
 
                   case 6:
@@ -71,7 +71,7 @@ void call()
                         cout<<"\nEner the number = ";
                         cin>>x;
                         calculator<T> ob(x);
-                        cout << ob.sqr_root()<<endl;
+                        ob.sqr_root();
                         break;
             }
       }
