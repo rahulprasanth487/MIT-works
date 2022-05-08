@@ -1,0 +1,20 @@
+
+1.create an abstract class bank with virtual fucntion get balance and withdrawal ,
+ deposit 10k, 15k, 20k
+
+
+2.Create an abstract class passenger with data members Name, 10 Phone number,
+From and to address, Schedule time and travel distance from passenger in km,
+class passenger has a pure virtual functions auto_fare. Uber and OLA are 
+derived from passenger class, they have a private data member estimate.
+The function auto fare, calculate the estimate for users scheduled time 
+and distance as 8 Rs per km. They have 2* estimated fare on peak hours.
+Assume Uber's usual peak hours are from 9-10 a.m and OLA's peak hours 
+are from 8-9a.m and 8-10 p.m. Both OLA and Uber have a common friend function
+which compares the estimated fare and suggest user about the low estimate ride.
+
+
+3.write a program to get student details and student marks excerption must thrown if the 
+reg no is not 10 digits and  and mark is not negative 
+
+

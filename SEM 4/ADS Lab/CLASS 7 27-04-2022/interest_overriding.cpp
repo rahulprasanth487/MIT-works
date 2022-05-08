@@ -12,19 +12,19 @@ class FD {
 class SBI:public FD {
     public:
         void interest(){
-            cout<<"The interest for "<<amt<<" in SBI is = "<<amt*0.04<<endl; ///1%
+            cout<<"The interest for "<<amt<<" is = "<<amt*0.04<<endl; ///1%
         }
 };
 class IOB:public FD {
     public:
         void interest(){
-            cout<<"The interest for "<<amt<<" in IOB is = "<<amt*0.06<<endl; ///1%
+            cout<<"The interest for "<<amt<<" is = "<<amt*0.06<<endl; ///1%
         }
 };
 class IB :public FD {
     public:
         void interest(){
-            cout<<"The interest for "<<amt<<" in Indian Bank is = "<<amt*0.05<<endl; ///1%
+            cout<<"The interest for "<<amt<<" is = "<<amt*0.05<<endl; ///1%
         }
 };
 

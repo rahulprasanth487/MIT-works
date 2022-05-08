@@ -17,25 +17,21 @@ int main()
     float m=1.1,n=2.2;
     double l=111.111,j=222.2222;
     char a='A',b='B';
-    string p=" Rahul ",q=" Prasanth ";
 
-    cout << "Before swapping " << endl;
-    cout << " x = " << x << " , y =" << y << endl;
-    cout << " m = " << m << " , n =" << n << endl;
-    cout << " l = " << l << " , j =" << j << endl;
-    cout << " a = " << a << " , b =" << b << endl;
-    cout << " p = " << p << " , q =" << q << endl;
+    cout<<"Before swapping "<<endl;
+    cout<<"x="<<x<<" y="<<y<<endl;
+    cout<<"m="<<m<<" n="<<n<<endl;
+    cout<<"l="<<l<<" j="<<j<<endl;
+    cout<<"a="<<a<<" b="<<b<<endl;
 
-    swapping<int>(x, y);
-    swapping<float>(m, n);
-    swapping<double>(l, j);
-    swapping<char>(a, b);
-    swapping<string>(p,q);
+    swapping<int>(x,y);
+    swapping<float>(m,n);
+    swapping<double>(l,j);
+    swapping<char>(a,b);
 
-    cout << "\nAfter swapping " << endl;
-    cout << " x = " << x << " , y =" << y << endl;
-    cout << " m = " << m << " , n =" << n << endl;
-    cout << " l = " << l << " , j =" << j << endl;
-    cout << " a = " << a << " , b =" << b << endl;
-    cout << " p = " << p << " , q =" << q << endl;
+    cout<<"\nAfter swapping "<<endl;
+    cout<<"x="<<x<<" y="<<y<<endl;
+    cout<<"m="<<m<<" n="<<n<<endl;
+    cout<<"l="<<l<<" j="<<j<<endl;
+    cout<<"a="<<a<<" b="<<b<<endl;
 }

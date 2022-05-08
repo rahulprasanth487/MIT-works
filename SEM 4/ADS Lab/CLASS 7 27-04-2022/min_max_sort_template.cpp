@@ -61,13 +61,12 @@ int main()
 {
     int arr[] = {3,2,1,7,5,4};
     int size=sizeof(arr)/sizeof(arr[0]);
+    
 
-    cout << "UnSorted Array = " << endl;
     print<int>(arr,size);
-    cout<<"\nMaximum = "<<max_ans<int>(arr,size)<<endl;
+    cout<<"Maximum = "<<max_ans<int>(arr,size)<<endl;
     cout<<"Minimum = "<<min_ans<int>(arr,size)<<endl;
 
-    cout<<"Sorted Array = "<<endl;
     sorting<int>(arr,size);
     print<int>(arr,size);
 }
