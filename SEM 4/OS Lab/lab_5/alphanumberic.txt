@@ -1,0 +1,5 @@
+153 is an Armstrong number 
+
+1634 is also an Armstrong number
+
+111 is not an armstrong number
