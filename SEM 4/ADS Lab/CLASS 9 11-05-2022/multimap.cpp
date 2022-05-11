@@ -35,10 +35,10 @@ int main()
 	mp.insert(pair<int,int>(2,100));
 	mp.insert(pair<int,int>(4,1000));
 	mp.insert(pair<int,int>(21,105));
-	mp.insert(pair<int,int>(3,103));
-	mp.insert(pair<int,int>(10,102));
-	mp.insert(pair<int,int>(2,101));
-	mp.insert(pair<int,int>(6,109));
+	//mp.insert(pair<int,int>(3,103));
+	//mp.insert(pair<int,int>(10,102));
+	//mp.insert(pair<int,int>(2,101));
+	//mp.insert(pair<int,int>(6,109));
 	
 	cout<<"SORTED MULTIMAP: \n";
 	display(mp);
