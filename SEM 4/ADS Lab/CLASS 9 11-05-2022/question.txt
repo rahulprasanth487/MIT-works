@@ -1,0 +1,9 @@
+1.Initialize a vector,with 6 elements and sort them in ascending and descending order
+
+2.create 2 forward list and swap elemets of one forward list with another
+
+3.Implement stack using vector,
+
+4.In queue add elements, "milk sugar coffee water", then search coffee and replace it with tea
+
+5.write a program to demonstrate sorted and unsorted multi-map
