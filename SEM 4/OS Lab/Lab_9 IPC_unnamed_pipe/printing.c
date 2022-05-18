@@ -9,8 +9,8 @@ int main()
 	int p[2];
 	int r=pipe(p);
 	char buffer[1024];
-	//p[0] to write
-	//p[1] to read
+	//p[1] to write
+	//p[0] to read
 	
 	char const *str1="Hello This is Rahul Prasanth D\n";
 	char const *str2="I am creating pipes to connect\n";
