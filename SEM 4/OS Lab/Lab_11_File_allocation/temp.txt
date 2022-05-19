@@ -1,1 +1,2 @@
-#Hello
+1.Solve the sequencial file allocation
+2.indexed file allocation
