@@ -124,22 +124,114 @@ void preorder_display(Node* node)
 }
 
 
-void search(Node* node,int key)
+int search(Node* node,int key)
 {	
 	while (node!=NULL)
 	{
 		if(node->key==key){
 			cout<<"\nElement found\n";
-			exit(0);
+			return 1;
 		}
 		if(key<node->key){
 			node=node->left;
 		}
 		else node=node->right;
 	}
-	cout<<"Element Not found";
+	cout<<"\nElement Not found";
+	return 0;
 	
 }
+
+
+
+int InorderSuccessor(Node* node)
+{
+	//return the minimum value;
+	Node* current=node;
+
+	if (current->left==NULL){
+		return current->key;
+	}
+
+	while (current != NULL)
+	{
+		current = current->left;
+	}
+	
+	return current->key;
+}
+
+
+
+Node* deleteNode(Node* node,int key)
+{
+	if(node==NULL) return node;
+
+	if(key<node->key)
+		node->left=deleteNode(node->left,key);
+	else if(key>node->key)
+		node->right=deleteNode(node->right,key);
+	else
+	{
+		//this the the case when the key entered matches the node
+		if((node->left==NULL)||(node->right==NULL))
+		{
+			Node* temp=node->left?node->left:node->right;
+			//the above one describes if any one is null then other will execute
+
+			//here for no child;
+			if(temp==NULL)
+			{
+				temp=node;
+				node=NULL;
+			}
+			else{
+				*node=*temp;
+			}
+
+			// removes the node
+			free(temp);
+		}
+
+		else{
+			int succor=InorderSuccessor(node->right);
+
+			node->key=succor;
+
+			node->right=deleteNode(node->right,succor);
+		}
+	}
+
+	if (node == NULL)
+		return node;
+
+	//then do the same as insert to balace the tree
+
+	int balance=balancingFactor(node);
+
+	node->height=1+max(height(node->left),height(node->right));
+
+	if(balance>1&&key<node->left->key) return rightRotate(node);
+
+	if(balance>1&&key>node->left->key)
+	{
+		node->left=leftRotate(node->left);
+		return rightRotate(node);
+	}
+
+	if(balance<-1&&key>node->right->key) return leftRotate(node);
+
+	if (balance < -1 && key < node->right->key)
+	{
+		// balance<-1&&key<node->right->key is the condition
+		node->right=rightRotate(node->right);
+		return leftRotate(node);
+	}
+
+	return node;
+
+}
+
 
 
 int main()
@@ -156,13 +248,17 @@ int main()
 	preorder_display(node);
 	cout<<"\n\n";
 
-	//Searching
-	int sr;
+	//Searching  
+	int sr,dl;
 	cout<<"Enter the number to search = ";
 	cin>>sr;
 
-	search(node,sr);
-	
+	int x=  search(node,sr);
+	cout<<"\nEnter the element ot delete = ";
+	cin>>dl;
+
+	node=deleteNode(node,dl);
+	preorder_display(node);
 
 	return 1;
 
