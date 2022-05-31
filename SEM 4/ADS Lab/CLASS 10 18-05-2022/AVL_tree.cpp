@@ -10,17 +10,24 @@ class Node
 		Node *left,*right;
 };
 
+//--------------------------------------------------------------------------------------
+
 int height(Node* n)
 {
 	if(n==NULL) return 0;
 	return n->height;
 }
 
+//--------------------------------------------------------------------------------------
+
 
 int max(int x,int y)
 {
 	return (x>y)?x : y;
 }
+
+//--------------------------------------------------------------------------------------
+
 
 Node* leftRotate(Node* y)
 {
@@ -35,6 +42,8 @@ Node* leftRotate(Node* y)
 	
 	return x;
 }
+
+//--------------------------------------------------------------------------------------
 
 
 Node* rightRotate(Node* y)
@@ -51,6 +60,7 @@ Node* rightRotate(Node* y)
 	return x;
 }
 
+//--------------------------------------------------------------------------------------
 
 Node* newnode(int key)
 {
@@ -61,12 +71,15 @@ Node* newnode(int key)
 	return temp;
 }
 
+//--------------------------------------------------------------------------------------
 
 int balancingFactor(Node* node)
 {
 	if(node==NULL) return 0;
 	return height(node->left)-height(node->right);
 }
+
+//--------------------------------------------------------------------------------------
 
 
 Node* insert(Node* node, int key)
@@ -111,7 +124,7 @@ Node* insert(Node* node, int key)
 	return node;
 }
 
-
+//--------------------------------------------------------------------------------------
 
 void preorder_display(Node* node)
 {
@@ -122,6 +135,8 @@ void preorder_display(Node* node)
 		preorder_display(node->right);
 	}
 }
+
+//--------------------------------------------------------------------------------------
 
 
 int search(Node* node,int key)
@@ -142,6 +157,7 @@ int search(Node* node,int key)
 	
 }
 
+//--------------------------------------------------------------------------------------
 
 
 int InorderSuccessor(Node* node)
@@ -161,6 +177,7 @@ int InorderSuccessor(Node* node)
 	return current->key;
 }
 
+//--------------------------------------------------------------------------------------
 
 
 Node* deleteNode(Node* node,int key)
@@ -232,34 +249,51 @@ Node* deleteNode(Node* node,int key)
 
 }
 
-
+//--------------------------------------------------------------------------------------
 
 int main()
 {
-	Node* node=NULL;
-	node=insert(node,10);
-	node=insert(node,20);
-	node=insert(node,30);
-	node=insert(node,40);
-	node=insert(node,50);
-	node=insert(node,60);
+	Node *node=NULL;
+	int ch;
+	cout<<"\n1.INSERT\n2.DELETE\n3.DISPLAY\n4.SEARCH\n";
+	while (1)
+	{	int val,x;
+		cout<<"\nEnter the choice = ";
+		cin>>ch;
+		if(ch==-1) return 1;
 
-	cout<<"\n\nPreorder traversal = ";
-	preorder_display(node);
-	cout<<"\n\n";
+		switch (ch)
+		{
+		case 1:
+			cout<<"\nEnter the value to insert = ";
+			cin>>val;
+			node=insert(node,val);
+			break;
+		
+		case 2:
+			cout << "\nEnter the value to delete = ";
+			cin >> val;
+			node = deleteNode(node, val);
+			break;
+		
+		case 3:
+			preorder_display(node);
+			break;
 
-	//Searching  
-	int sr,dl;
-	cout<<"Enter the number to search = ";
-	cin>>sr;
+		case 4:
+			cout << "\nEnter the value to search = ";
+			cin >> val;
+			x = search(node, val);
+			break;
 
-	int x=  search(node,sr);
-	cout<<"\nEnter the element ot delete = ";
-	cin>>dl;
-
-	node=deleteNode(node,dl);
-	preorder_display(node);
+		default:
+			cout<<"Wrong choice";
+			break;
+		}
+	}
 
 	return 1;
-
+	
 }
+
+//--------------------------------------------------------------------------------------
