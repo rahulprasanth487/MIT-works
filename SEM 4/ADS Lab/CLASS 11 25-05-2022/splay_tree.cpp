@@ -161,9 +161,11 @@ int main()
       cout << "-------------------------\n";
       cout << "\tSplay Tree\n";
       cout << "-------------------------\n";
+      cout << "1) To insert \n2) To deleten\n3) To search\n4) To display in preorder\n5) To exit: ";
+
       while (1)
       {
-            cout << "Enter 1) To insert 2) To delete 3) To search 4) To display in preorder 5) To exit: ";
+            cout<<"Enter the choice = ";
             cin >> ch;
             switch (ch)
             {
