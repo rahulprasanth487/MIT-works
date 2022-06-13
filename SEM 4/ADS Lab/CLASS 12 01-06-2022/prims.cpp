@@ -10,16 +10,20 @@ using namespace std;
 // A utility function to find the vertex with
 // minimum key value, from the set of vertices
 // not yet included in MST
-int minKey(int key[], bool mstSet[])
+int mindistance(int dist[], bool visited[])
 {
-      // Initialize min value
-      int min = INT_MAX, min_index;
+      int min = INT_MAX;
+      int min_node;
+      for (int i = 0; i < V; ++i)
+      {
+            if (!visited[i] && dist[i] <= min)
+            {
+                  min = dist[i];
+                  min_node = i;
+            }
+      }
 
-      for (int v = 0; v < V; v++)
-            if (mstSet[v] == false && key[v] < min)
-                  min = key[v], min_index = v;
-
-      return min_index;
+      return min_node;
 }
 
 // A utility function to print the
@@ -43,11 +47,11 @@ void primMST(int graph[V][V])
       int key[V];
 
       // To represent set of vertices included in MST
-      bool mstSet[V];
+      bool visited[V];
 
       // Initialize all keys as INFINITE
       for (int i = 0; i < V; i++)
-            key[i] = INT_MAX, mstSet[i] = false;
+            key[i] = INT_MAX, visited[i] = false;
 
       // Always include first 1st vertex in MST.
       // Make key 0 so that this vertex is picked as first vertex.
@@ -59,10 +63,10 @@ void primMST(int graph[V][V])
       {
             // Pick the minimum key vertex from the
             // set of vertices not yet included in MST
-            int u = minKey(key, mstSet);
+            int u = mindistance(key, visited);
 
             // Add the picked vertex to the MST Set
-            mstSet[u] = true;
+            visited[u] = true;
 
             // Update key value and parent index of
             // the adjacent vertices of the picked vertex.
@@ -71,9 +75,9 @@ void primMST(int graph[V][V])
             for (int v = 0; v < V; v++)
 
                   // graph[u][v] is non zero only for adjacent vertices of m
-                  // mstSet[v] is false for vertices not yet included in MST
+                  // visited[v] is false for vertices not yet included in MST
                   // Update the key only if graph[u][v] is smaller than key[v]
-                  if (graph[u][v] && mstSet[v] == false && graph[u][v] < key[v])
+                  if (graph[u][v] && visited[v] == false && graph[u][v] < key[v])
                         parent[v] = u, key[v] = graph[u][v];
       }
 
