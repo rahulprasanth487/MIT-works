@@ -94,11 +94,15 @@ public:
       {
             if (root == NULL)
                   return newNode(key);
+
+
             // get the nearest leaf node to root
             root = splay(root, key);
             // check for duplicate
             if (root->key == key)
                   return root;
+
+                  
             node *temp = newNode(key);
             if (root->key > key)
             {

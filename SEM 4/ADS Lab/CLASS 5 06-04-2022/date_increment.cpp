@@ -14,7 +14,7 @@ int leap_year(int yr)
             if(yr%400) flag=1;
             else flag=0;
         }
-        else flag=0;
+        else flag=1;
     }
     else flag=0;
 

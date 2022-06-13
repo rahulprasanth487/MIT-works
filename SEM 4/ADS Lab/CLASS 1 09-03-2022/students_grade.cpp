@@ -2,53 +2,44 @@
 #include <string.h>
 using namespace std;
 
-
 struct students
 {
 
-string name;
+  string name;
 
-int roll_no;
+  int roll_no;
 
-int math, phy, chem;
-
-
+  int math, phy, chem;
 };
 
-
-int
-main ()
+int main()
 {
   struct students stud;
-cout << "Enter the name = ";
+  cout << "Enter the name = ";
 
-string nam;
+  string nam;
 
-getline (cin, stud.name);
+  getline(cin, stud.name);
 
+  cout << "Enter the roll number = ";
 
-cout << "Enter the roll number = ";
+  cin >> stud.roll_no;
 
-cin >> stud.roll_no;
+  cout << "Enter math marks = ";
 
-cout << "Enter math marks = ";
+  cin >> stud.math;
 
-cin >> stud.math;
+  cout << "Enter phy marks = ";
 
-cout << "Enter phy marks = ";
+  cin >> stud.phy;
 
-cin >> stud.phy;
+  cout << "Enter chem marks = ";
 
-cout << "Enter chem marks = ";
+  cin >> stud.chem;
 
-cin >> stud.chem;
+  int tot = stud.chem + stud.math + stud.phy;
 
-
-
-int tot = stud.chem + stud.math + stud.phy;
-
-
-if (tot >= 90)
+  if (tot >= 90)
     cout << "A";
 
   else if (tot > 80 && tot < 90)
@@ -59,7 +50,4 @@ if (tot >= 90)
 
   else
     cout << "Lower grades";
-
 }
-
-
