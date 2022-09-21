@@ -1,5 +1,4 @@
 
-package session.pkg6;
 import java.util.*;
 
 abstract class Mks
