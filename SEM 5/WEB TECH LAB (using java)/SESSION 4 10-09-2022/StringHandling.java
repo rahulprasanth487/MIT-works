@@ -4,7 +4,7 @@ public class StringHandling {
     public static void main(String[] args)
     {
         StringBuilder str=new StringBuilder("Rahul ");
-        System.out.println("Cpacity = "+str.capacity());
+        System.out.println("Capacity = "+str.capacity());
         
         System.out.println("Lowercase = "+(str.toString()).toLowerCase());
 
