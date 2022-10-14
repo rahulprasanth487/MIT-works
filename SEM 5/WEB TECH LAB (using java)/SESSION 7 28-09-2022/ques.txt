@@ -1,0 +1,17 @@
+EXCEPTION HANDLING
+
+1. Develop a Java Console application to design a Vending Machine which follows following
+requirements
+	1. Accepts coins of ₹1, ₹5, ₹10, ₹25, ₹50
+	2. Allows user to select products (Chocolate(10), Snack(25), Nuts(50), Juice(20))
+	3. Allow user to take refund by cancelling the request
+	4. Return selected product and remaining change, if any
+	5. Allow reset operation for vending machine supplier
+	Use Interface, Inheritance, Constructor, abstract class, polymorphism, 	exception (Unchecked Exception, checked Exception, Custom Exception	(NotPaidFullAmoutException, NoSufficientChangeException, SoldOutException))
+	concepts and also use static, final and this keyword wherever applicable to design a java 
+	application. 
+
+2. Calculate EMI for personal loan of Rs100000/- with the 
+rate of interest:13% for a total of 3 years, if there is no balance in the
+ account to pay an EMI raise a custom exception also 
+use try catch finally mechanism.
