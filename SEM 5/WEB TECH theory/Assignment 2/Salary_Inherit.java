@@ -63,7 +63,6 @@ class Manager extends Member
     {
         //Member obj=new Member();
         System.out.println("\n\nManager Details ------------> ");
-        //super.display();
         display();
         System.out.println("Department = "+dep);
         System.out.println("Specialization = "+spec);

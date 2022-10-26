@@ -56,15 +56,6 @@ class Alphabetical_list
                   System.out.println(e);
             }
       }
-
-      // void display(HashMap<String,Integer> mp)
-      // {
-      //       for(Map.Entry entry:mp.entrySet())
-      //       {
-                  
-      //       }
-      // }
-
       public static void main(String[] args)
       {
             LinkedHashMap<String, Integer> sortedMap = new LinkedHashMap<>();
