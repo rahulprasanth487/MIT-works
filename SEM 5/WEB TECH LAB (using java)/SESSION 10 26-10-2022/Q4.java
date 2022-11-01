@@ -1,7 +1,7 @@
 import java.util.*;
 import java.lang.*;
 
-class Th1 extends Thread {
+class Th_1 extends Thread {
       public void run() {
             for (char i = 'A'; i <= 'Z'; ++i) {
                   try {
@@ -14,7 +14,7 @@ class Th1 extends Thread {
       }
 }
 
-class Th2 extends Thread {
+class Th_2 extends Thread {
       public void run() {
             for (char i = 'Z'; i >= 'A'; --i) {
                   try {
@@ -30,14 +30,14 @@ class Th2 extends Thread {
 public class Q4 {
       public static void main(String[] args) {
 
-            Th1 thread1 = new Th1();
-            Th2 thread2 = new Th2();
+            Th_1 thread1 = new Th_1();
+            Th_2 thread2 = new Th_2();
             thread1.start();
             thread2.start();
 
             System.out.println("Waiting for execution of one thread = ");
-            Th1 thread3 = new Th1();
-            Th2 thread4 = new Th2();
+            Th_1 thread3 = new Th_1();
+            Th_2 thread4 = new Th_2();
             thread1.start();
             try {
                   thread3.join();

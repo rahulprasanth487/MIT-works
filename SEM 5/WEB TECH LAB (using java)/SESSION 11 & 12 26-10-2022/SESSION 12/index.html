@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>ONLINE SHOPPING STORE</title>
+    
+    <style>
+        .reg_cont{
+            padding: 10px;
+            display:block;
+        }
+        .login_cont
+        {
+            padding: 10px;
+            display: none;
+        }
+
+        .buttons
+        {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .buttons button{
+            margin: 15px;
+        }
+
+        #logout
+        {
+            display: none;
+        }
+
+        .p_details,#profile
+        {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container center-block text-center">
+        <h1>ONLINE SHOPPING STORE</h1>
+    </div> 
+
+    <div class="container center-block buttons">
+        <div class="row text-center">
+            <button class="btn btn-success" type="button" id="reg">REGISTER</button>
+            <button class="btn btn-success" type="button" id="log">LOGIN</button>
+            <button class="btn btn-success" type="button" id="logout">LOGOUT</button>
+        </div>
+    </div>
+
+    <!--REGISTRATION FORM-->
+
+    <div class="container bg-warning center-block text-center reg_cont" >
+        <div><h2>REGISTRATION</h2></div>
+        <form class="form-group jumbotron " id="reg-form" onsubmit="return false;">
+            <label for="name">NAME : </label>
+            <input type="text" name="name" id="name" value="Rahul" required>
+            <br>
+
+            <label for="mobile">MOBILE NUMBER : </label>
+            <input type="tel" name="mobile" id="mobile" value="1234567889"pattern="[1-9]{1}[0-9]{9}" required >
+            <br>
+
+            <label for="email">Email : </label>
+            <input type="email" name="email" id="email" value="rahul@gmail.com"  required>
+            <br>
+
+            <label for="Address">Address : </label>
+            <input type="text" name="Address" id="address" value="address" required>
+            <br>
+
+            <label for="city">City : </label>
+            <input type="text" name="city" id="city" value="erode" required>
+            <br>
+            
+            <label for="state">State : </label>
+            <input type="text" name="state" id="state" value="TN" required>
+            <br>
+
+            <label for="pincode ">Pincode : </label>
+            <input type="tel" name="pincode" id="pincode" value="600044" required>
+            <br>
+
+            <label for="dob">Date of Birth : </label>
+            <input type="date" name="dob" id="dob" required>
+            <br>
+
+            <label for="gender">GENDER : </label> 
+            <input type="radio" name="gender" id="gender" value="male" checked required> Male   
+            <input type="radio" name="gender" id="gender" value="female" required> Female
+            <input type="radio" name="gender" id="gender" value="not" required> Others
+
+            <br><br>
+
+            <label for="uname ">Username : </label>
+            <input type="text" name="uname" id="uname" value="username" required>
+            <br>
+            
+            <label for="password ">Password : </label>
+            <input type="password" name="password" id="password" value="123ABCabc" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+            <br>
+
+            <label for="confirm_password ">Confirm Password : </label>
+            <input type="text" name="confirm_password" id="confirm_password" value="123ABCabc" required>
+            <br><br>
+
+            <div id="err_msg" style="color:red"></div>
+
+            <br><br>
+            <input type="submit" value="SUBMIT" class="btn btn-primary reg_submit">
+
+        </form>
+    </div>
+    <br>
+    <!--LOGIN FORM-->
+    <div class="container bg-warning center-block text-center login_cont">
+        <div><h2>LOGIN</h2></div>
+        <form class="form-group jumbotron" onsubmit="return false;">
+            <label for="username">USERNAME : </label>
+            <input type="text" name="username" id="login_username">
+            <br>
+
+            <label for="password">PASSWORD : </label>
+            <input type="password" name="password" id="login_password">
+            <br><br>
+
+            <input type="submit" value="SUBMIT" class="btn btn-primary login_submit">
+        </form>
+    </div>
+
+
+    <button id="profile" type="button" value="profile">PROFILE</button>
+    <div class="p_details">
+        <h1>USER DETAILS:</h1>
+        <div>
+            <h1 class="p_name"></h1>
+        </div>
+        <div class="p_mobile"></div>
+        <div class="p_email"></div>
+        <div class="p_address"></div>
+        <div class="p_city"></div>
+        <div class="p_pincode"></div>
+        <div class="p_dob"></div>
+        <div class="p_gender"></div>
+    </div>
+    <script src="validation.js"></script>
+</body>
+</html>

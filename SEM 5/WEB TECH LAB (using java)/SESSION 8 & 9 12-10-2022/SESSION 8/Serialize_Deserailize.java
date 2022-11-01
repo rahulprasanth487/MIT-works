@@ -4,7 +4,7 @@ import java.util.*;
 class Content implements Serializable
 {
       public String Country_name, continent;
-      public long population;
+      public transient long population;
       Content()
       {
             System.out.println("Enter Country name, continent, population = ");

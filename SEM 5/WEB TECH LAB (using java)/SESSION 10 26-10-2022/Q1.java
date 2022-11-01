@@ -5,7 +5,7 @@ class Th1 extends Thread
 {
       public void run()
       {
-            for (int i = 0; i < 10; ++i) {
+            for (int i = 0; i < 5; ++i) {
             try{
                   Thread.sleep(1000);
             }
@@ -19,7 +19,7 @@ class Th1 extends Thread
 
 class Th2 extends Thread {
       public void run() {
-            for (int i = 0; i < 10; ++i) {
+            for (int i = 0; i < 5; ++i) {
             try {
                   Thread.sleep(2000);
             } catch (InterruptedException e) {
@@ -31,7 +31,7 @@ class Th2 extends Thread {
 
 class Th3 extends Thread {
       public void run() {
-            for (int i = 0; i < 10; ++i) {
+            for (int i = 0; i < 5; ++i) {
             try {
                   Thread.sleep(5000);
             } catch (InterruptedException e) {

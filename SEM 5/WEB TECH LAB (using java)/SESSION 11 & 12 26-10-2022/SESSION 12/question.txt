@@ -1,0 +1,10 @@
+1.	Design a web page for online shopping store. The website should consist the following pages.
+    •	Registration and user Login
+    •	User Profile Page 
+    •	Product catalog 
+    •	Shopping Cart  
+    •	Payment 
+    •	Order Conformation 
+Create web page which validates the registration and user login using javascript. When product catalog is viewed, the product can be zoomed in or zoomed out to know about the product in detail. User profile page can include details about user with few personal details to be displayed. When product is chosen for shopping based on the quantity specified, display the price of the product and in payment page validate the details using javascript. Once order is confirmed display the details about order and estimated date by which the product will be delivered to the user.
+
+Note: Database connectivity is not needed.
