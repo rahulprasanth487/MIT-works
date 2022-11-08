@@ -45,7 +45,7 @@ public class Q3
                   thr1.start();
 
                   try{thr1.join();}
-                  catch(Exception e) {System.out.println("Exceptio occured");}
+                  catch(Exception e) {System.out.println("Exception occured");}
 
 
                   int z=t1.get();
@@ -58,7 +58,7 @@ public class Q3
                   try {
                         thr2.join();
                   } catch (Exception e) {
-                        System.out.println("Exceptio occured");
+                        System.out.println("Exception occured");
                   }
                   t2.set(z);
                   t2.compute();

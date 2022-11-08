@@ -36,7 +36,6 @@ function store_data()
       dict["password"] = document.querySelector("#password").value;
       dict["confirm_password"] = document.querySelector("#confirm_password").value;
       console.log(dict);
-
 }
 
 
@@ -65,7 +64,10 @@ function login_ver()
             document.querySelector(".reg_cont").style.display = 'none';
             document.querySelector(".login_cont").style.display = 'none';
             document.querySelector("#profile").style.display = 'block';
+            document.querySelector("#catalog").style.display = 'block';
+            document.querySelector("#cart").style.display = 'block';
             document.querySelector(".p_details").style.display = 'block';
+            
       }
 }
 
@@ -82,6 +84,41 @@ function Userdetails()
       document.querySelector(".p_city").innerHTML =dict["city"];
       document.querySelector(".p_pincode").innerHTML =dict["pincode"];
       document.querySelector(".p_dob").innerHTML =dict["dob"];
-      document.querySelector(".p_gender").innerHTML =dict["gender"];
-      
+      document.querySelector(".p_gender").innerHTML =dict["gender"];   
+}
+
+
+document.querySelector("#catalog").addEventListener("click", function()
+{
+      document.querySelector(".catalog_details").style.display = 'block';
+      document.querySelector(".p_details").style.display = 'none';
+});
+
+
+
+const cart={}
+
+function cata(event)
+{
+      cart[event.id]=1;
+      console.log(cart);
+}
+
+document.querySelector("#cart").addEventListener("click", crt);
+
+function crt()
+{
+      alert("Clicked");
+
+      for (var key in cart) {
+            console.log(key, cart[key]);
+            const child=document.querySelector(".cart");
+            var node=document.createElement("li");
+            var textnode=document.createTextNode(key+" -> "+cart[key]);
+            node.appendChild(textnode);
+            child.appendChild(node);
+      }
+      document.querySelector(".cart").style.display='block';
+      document.querySelector(".catalog_details").style.display = 'none';
+      document.querySelector(".p_details").style.display = 'none';
 }

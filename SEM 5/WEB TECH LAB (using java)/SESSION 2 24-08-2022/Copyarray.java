@@ -1,19 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package session_2;
+
 import java.util.*;
-/**
- *
- * @author student
- */
 public class Copyarray {
     int[] arrgen()
     {
         Scanner inp=new Scanner(System.in);
-        
         int arr[];
         System.out.println("Enter the number of elements - ");
         int n=inp.nextInt();
@@ -24,7 +14,6 @@ public class Copyarray {
             int num=inp.nextInt();   
             arr[i]=num;
         }
-        
         return arr;
     }
     public static void main(String[] args)
@@ -34,8 +23,7 @@ public class Copyarray {
         int arr1[]=obj.arrgen();
         System.out.println("Array 2 = ");
         int arr2[]=obj.arrgen();
-        
-        System.arraycopy(arr1, 1, arr2, 3, 3);
+        System.arraycopy(arr1, 1, arr2, 2, 3);
         System.out.println(Arrays.toString(arr1));
         System.out.println(Arrays.toString(arr2));
     }

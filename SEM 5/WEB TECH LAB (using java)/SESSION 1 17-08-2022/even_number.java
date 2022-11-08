@@ -3,7 +3,7 @@ public class even_number {
     {
         for(int i=0;i<=50;i=i+2)
         {
-            System.out.println(i);
+            System.out.print(i+"  ");
         }
     }
 }

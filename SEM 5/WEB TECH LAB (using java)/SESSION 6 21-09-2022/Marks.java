@@ -50,7 +50,6 @@ public class Marks {
         A obj1=new A(s1,s2,s3);
         obj1.getPercentage();
         
-        
         System.out.println("Enter the 4 subject marks = ");
         s1=inp.nextDouble();
         s2=inp.nextDouble();
@@ -58,8 +57,6 @@ public class Marks {
         s4=inp.nextDouble();
         
         B obj2=new B(s1,s2,s3,s4);
-        
-        
         obj2.getPercentage();
     }
 }

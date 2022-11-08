@@ -17,6 +17,5 @@ public class StringHandling {
         
         StringBuilder x=str.reverse();
         System.out.println("Reveersed string - "+str);
-        
     }
 }

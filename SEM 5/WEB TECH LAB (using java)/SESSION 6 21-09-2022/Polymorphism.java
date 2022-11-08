@@ -58,9 +58,13 @@ class NonTech extends Book
 public class Polymorphism {
     public static void main(String[] args)
     {
+        //upcasting
         Book obj1=new Tech();
+
+        //downcasting
         Book obj2=new NonTech();
+        NonTech dwn=(NonTech)obj2;
         obj1.Display();
-        obj2.Display();
+        dwn.Display();
     }
 }

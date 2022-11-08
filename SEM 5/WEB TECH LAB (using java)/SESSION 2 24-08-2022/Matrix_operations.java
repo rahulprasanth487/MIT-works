@@ -1,14 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package session_2;
 import java.util.*;
-/**
- *
- * @author student
- */
 public class Matrix_operations {
     
     void display(int A[][],int m,int n)
@@ -34,10 +24,8 @@ public class Matrix_operations {
                 ans[i][j]=A[i][j]+B[i][j];
             }
         }
-        
         Matrix_operations obj=new Matrix_operations();
         this.display(ans, m, n);
-       
     }
     
     void multiplication(int A[][],int B[][],int m,int n)
@@ -52,7 +40,6 @@ public class Matrix_operations {
                 {ans[i][j]+=A[i][k]*B[k][j];}
             }
         }
-        
         Matrix_operations obj=new Matrix_operations();
         this.display(ans, m, n);
     }
@@ -68,7 +55,6 @@ public class Matrix_operations {
                 ans[i][j]=A[j][i];
             }
         }
-        
         Matrix_operations obj=new Matrix_operations();
         this.display(ans, m, n);
     }
@@ -78,7 +64,6 @@ public class Matrix_operations {
     {
         int ans[][]=new int[m][n];
         Scanner inp=new Scanner(System.in);
-        
         for(int i=0;i<m;++i)
         {
             for(int j=0;j<n;++j)

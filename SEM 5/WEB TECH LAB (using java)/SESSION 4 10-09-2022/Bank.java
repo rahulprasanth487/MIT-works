@@ -1,12 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package session4;
-
 import java.util.*;
-
 class Bk
 {
     long accno;
@@ -19,7 +11,6 @@ class Bk
         this.name=name;
         this.accno=accno;
     }
-    
     void credit()
     {
             System.out.print("Enter the amount to deposit = ");
@@ -27,7 +18,6 @@ class Bk
             this.balance+=x;
             System.out.println("Amount Deposited!\nCurrent balance - "+this.balance);
     }
-    
     void debit()
     {
             System.out.print("Enter the amount to withdraw = ");
@@ -35,7 +25,6 @@ class Bk
             this.balance-=x;
             System.out.println("Amount Debited!\nCurrent balance - "+this.balance);
     }
-    
     void display()
     {
         System.out.println("Name = "+name);

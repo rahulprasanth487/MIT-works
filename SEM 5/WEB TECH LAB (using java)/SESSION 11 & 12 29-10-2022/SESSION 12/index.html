@@ -34,9 +34,13 @@
             display: none;
         }
 
-        .p_details,#profile
+        .p_details,#profile,#catalog,#cart,.catalog_details
         {
             display: none;
+        }
+
+        table,tr,td{
+            border: none;
         }
     </style>
 </head>
@@ -49,7 +53,7 @@
         <div class="row text-center">
             <button class="btn btn-success" type="button" id="reg">REGISTER</button>
             <button class="btn btn-success" type="button" id="log">LOGIN</button>
-            <button class="btn btn-success" type="button" id="logout">LOGOUT</button>
+            <button class="btn btn-success" type="button" id="logout" style="display: none;">LOGOUT</button>
         </div>
     </div>
 
@@ -133,8 +137,11 @@
         </form>
     </div>
 
-
-    <button id="profile" type="button" value="profile">PROFILE</button>
+    <div class="row" style="display:flex;justify-content: space-evenly;">
+        <button class="btn btn-primary" id="profile" type="button">PROFILE</button>
+        <button class="btn btn-primary" id="catalog" type="button">Catalog</button>
+        <button class="btn btn-primary" id="cart" type="button">Cart</button>
+    </div>
     <div class="p_details">
         <h1>USER DETAILS:</h1>
         <div>
@@ -148,6 +155,35 @@
         <div class="p_dob"></div>
         <div class="p_gender"></div>
     </div>
+
+
+    <div class="catalog_details">
+        <h1>PRODUCTS :</h1>
+        <table>
+            <tr>
+                <td>MOBILE</td>
+                <td><button onclick="cata(this)" id="mobile">ADD</button></td>
+            </tr>
+            <tr>
+                <td>Laptop</td>
+                <td><button onclick="cata(this)" id="laptop">ADD</button></td>
+            </tr>
+            <tr>
+                <td>Bike</td>
+                <td><button onclick="cata(this)" id="Bike">ADD</button></td>
+            </tr>
+            <tr>
+                <td>car</td>
+                <td><button onclick="cata(this)" id="car">ADD</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <ul class="cart" style="display:none;">
+        <h1>CART DETAILS</h1>
+        <li>PRODUCTS and QUANTITY</li>
+        
+    </ul>
     <script src="validation.js"></script>
 </body>
 </html>

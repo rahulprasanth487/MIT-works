@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package wt.pkg3;
+
 import java.util.*;
 
 class Srt
@@ -47,7 +42,7 @@ public class Sorting {
     {
         
         new Srt().insertionsort();
-        System.out.println("Using Default Constructor = ");
+        System.out.println("the above is by Using Default Constructor");
         System.out.println("Using parameterized constructor = ");
         new Srt(new int[]{10,9,1,2,3}).insertionsort();
     }

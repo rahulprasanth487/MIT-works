@@ -24,10 +24,7 @@ public class Q2 {
             Thr t3 = new Thr();
             Thr t4 = new Thr();
             Thr t5 = new Thr();
-            
-
-            //current pri = 5 for all thread
-
+   
             t1.setPriority(10);
             t2.setPriority(10);
 

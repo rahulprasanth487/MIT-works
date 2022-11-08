@@ -1,51 +1,61 @@
 import java.util.*;
 import java.lang.*;
 
-class Th_1 extends Thread {
-      public void run() {
-            for (char i = 'A'; i <= 'Z'; ++i) {
-                  try {
+class Print extends Thread {
+      void AZprint() {
+            try {
+                  for (int i = 0; i < 26; i++) {
                         Thread.sleep(1000);
-                  } catch (InterruptedException e) {
-                        System.out.println("Interrupt occurs in thread 1");
+                        System.out.print((char) (65 + i));
                   }
-                  System.out.print(i + " ");
+                  System.out.println();
+            } catch (Exception e) {
+                  System.out.println(e);
+            }
+      }
+
+      void ZAprint() {
+            try {
+                  for (int i = 0; i < 26; i++) {
+                        Thread.sleep(2000);
+                        System.out.print((char) (90 - i));
+                  }
+                  System.out.println();
+            } catch (Exception e) {
+                  System.out.println(e);
             }
       }
 }
 
-class Th_2 extends Thread {
+class ThreadDemo extends Thread {
+      String name;
+      Print p;
+
+      ThreadDemo(String name, Print p) {
+            this.name = name;
+            this.p = p;
+      }
+
       public void run() {
-            for (char i = 'Z'; i >= 'A'; --i) {
-                  try {
-                        Thread.sleep(2000);
-                  } catch (InterruptedException e) {
-                        System.out.println("Interrupt occurs in thread 1");
+            try {
+                  synchronized (p) {
+                        if (name.equals("thread 1"))
+                              p.AZprint();
+                        else if (name.equals("thread 2"))
+                              p.ZAprint();
                   }
-                  System.out.print(i + " ");
+            } catch (Exception e) {
+                  System.out.println(e);
             }
       }
 }
 
 public class Q4 {
       public static void main(String[] args) {
-
-            Th_1 thread1 = new Th_1();
-            Th_2 thread2 = new Th_2();
-            thread1.start();
-            thread2.start();
-
-            System.out.println("Waiting for execution of one thread = ");
-            Th_1 thread3 = new Th_1();
-            Th_2 thread4 = new Th_2();
-            thread1.start();
-            try {
-                  thread3.join();
-            } catch (Exception e) {
-                  System.out.println("Exceptio occured");
-            }
-            thread4.start();
-
+            Print p = new Print();
+            ThreadDemo t1 = new ThreadDemo("thread 1", p);
+            ThreadDemo t2 = new ThreadDemo("thread 2", p);
+            t1.start();
+            t2.start();
       }
-
 }

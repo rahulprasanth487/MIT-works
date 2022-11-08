@@ -1,6 +1,5 @@
 import java.util.*;
 import java.lang.*;
-
 class Th1 extends Thread
 {
       public void run()

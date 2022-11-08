@@ -49,6 +49,7 @@ import javax.naming.InitialContext;
                         balance-=ans;
                   }
                   System.out.printf("Current Balance = %.2f" ,balance);
+                  System.out.println();
             }
             catch(InsufficientBalanceException ae)
             {

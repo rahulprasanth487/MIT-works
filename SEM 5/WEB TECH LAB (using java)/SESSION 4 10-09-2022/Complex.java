@@ -1,10 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package session4;
 
+import java.util.*;
 class Comp
 {
     int real,imag;
@@ -48,7 +43,7 @@ public class Complex {
         obj.add(c1,c2);
         System.out.println("Subtraction = ");
         obj.sub(c1,c2);
-        System.out.println("Division = ");
+        System.out.println("Multiplication = ");
         obj.mult(c1,c2);
     }
 }
