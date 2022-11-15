@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Question 6</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+      <center>
+            <form onsubmit="return false;">
+                  Number 1 : <input type="text" name="one" id="one">
+                  <br><br>
+                  Number 2 : <input type="text" name="two" id="two">
+                  <br><br>
+                  <button>SUBMIT</button>
+            </form>
+
+            <br><br>
+            ADD:<p class="add"></p>
+            <br>
+            SUBTRACT:<p class="sub"></p>
+            <br>
+            MULTIPLY:<p class="mul"></p>
+            <br>
+            DIVIDE:<p class="p"></p>
+      </center>
+
+      <script>
+            var one,two;
+            $("button").click(function()
+            {
+                  one=parseInt($("#one").val());
+                  two = parseInt($("#two").val());
+                  $(".add").text(one+two);
+                  $(".sub").text(one - two);
+                  $(".mul").text(one * two);
+                  $(".p").text(one / two);
+            })
+      </script>
+</body>
+
+</html>

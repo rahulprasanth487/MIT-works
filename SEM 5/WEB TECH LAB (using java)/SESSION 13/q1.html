@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+      <p>HELLO THIS IS P TAG then <b>Click me</b></p>
+      <br><br>
+      <div>I am DIV TAG <b>Click me</b></div>
+
+      <script>
+            $(document).ready(function()
+            {
+                  $("p").click(e=>{
+                        $("p").hide();
+                  });
+
+                  $("div").click(e => {
+                        $("div").hide();
+                  });
+            });
+      </script>
+</body>
+</html>
