@@ -1,0 +1,161 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+      <div class="sports">
+            <h1>SPORTS</h1>
+            <h2 class="question"></h2>
+            <ol class="sport_list"></ol>
+      </div>
+      <hr><hr>
+      <div class="maths">
+            <h1>MATHS</h1>
+            <h1>QUESTION 1</h1>
+            <h2 class="question"></h2>
+            <ol class="maths_list"></ol>
+            <h1>QUESTION 2</h1>
+            <h2 class="question"></h2>
+            <ol class="maths_list"></ol>
+      </div>
+      <script type="text/javascript">
+            $(document).ready(function(){load()});
+
+            function load()
+            {
+                  var request;
+                  if(window.XMLHttpRequest)
+                  {
+                        request=new XMLHttpRequest();
+                  }
+                  else if(window.ActiveXObject)
+                  {
+                        request=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+
+                  request.onreadystatechange = function()
+                  {
+                        if(request.readyState==4)
+                        {
+                              var jsonobj=JSON.parse(request.responseText);
+                              $(".sports .question").append(jsonobj.quiz.sport.q1.question);
+                              $(".sports .sport_list").append(function()
+                              {
+                                    const obj = jsonobj.quiz.sport.q1.options;
+                                    for(var i=0;i<obj.length;++i)
+                                    {
+                                          var cont="<li><h3>"+obj[i]+"</h3></li>";
+                                          $(".sports .sport_list").append(cont);
+                                    }
+                              });
+
+                              $(".sports .sport_list li").on("click",function()
+                              {
+                                    if(jsonobj.quiz.sport.q1.answer==$(this).text())
+                                    {
+                                          alert("Correct answer");
+                                    }
+                                    else{alert("Wrong answer");}
+                              });
+
+
+
+
+                              $(".maths .question").append(jsonobj.quiz.maths.q1.question);
+                              $(".maths .maths_list").append(function () {
+                                    const obj = jsonobj.quiz.maths.q1.options;
+                                    for (var i = 0; i < obj.length; ++i) {
+                                          var cont = "<li><h3>" + obj[i] + "</h3></li>";
+                                          $(".maths .maths_list").append(cont);
+                                    }
+                              });
+
+                              $(".maths .maths_list li").on("click", function () {
+                                    if (jsonobj.quiz.sport.q1.answer == $(this).text()) {
+                                          alert("Correct answer");
+                                    }
+                                    else { alert("Wrong answer"); }
+                              });
+
+
+
+
+
+                              $(".sports .question").append(jsonobj.quiz.spor.q1.question);
+                              $(".sports .sport_list").append(function () {
+                                    const obj = jsonobj.quiz.sport.q1.options;
+                                    for (var i = 0; i < obj.length; ++i) {
+                                          var cont = "<li><h3>" + obj[i] + "</h3></li>";
+                                          $(".sports .sport_list").append(cont);
+                                    }
+                              });
+
+                              $(".sports .sport_list li").on("click", function () {
+                                    if (jsonobj.quiz.sport.q1.answer == $(this).text()) {
+                                          alert("Correct answer");
+                                    }
+                                    else { alert("Wrong answer"); }
+                              });
+
+                              
+
+                        }
+                  }
+
+                  request.open("GET","data.json",true);
+                  request.send();
+            }
+      </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+            integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+      <title>Document</title>
+</head>
+
+<body>
+      <script>
+            const buildQuiz = (quiz) => {
+                  const newQuiz = $("<div></div>");
+                  for (let question of quiz["questions"]) {
+                        newQuiz.append($("<div></div>").text(question['question']));
+                        for (let option of question["options"]) {
+                              const newOption = $("<div></div>")
+                              newOption.append($(`<input type='radio' name='${question}' />`))
+                              newOption.append($("<label></label>").text(option));
+                              newQuiz.append(newOption);
+                        }
+                        newQuiz.append(`<div>Right answer: ${question['answer']}`)
+                  };
+                  $("body").append(newQuiz);
+            }
+            $(document).ready(() => {
+                  $.get("data.json", (data, status) => {
+                        $("body").append("<h2>Sport quiz</h2>")
+                        buildQuiz(data["quiz"]["sport"]);
+                        $("body").append("<h2>Math quiz</h2>")
+                        buildQuiz(data["quiz"]["maths"]);
+                  });
+            })
+      </script>
+      <style>
+            div {
+                  margin: 1rem;
+            }
+      </style>
+</body>
+
+</html>
