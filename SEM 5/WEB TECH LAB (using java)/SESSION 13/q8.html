@@ -1,0 +1,143 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Question 5</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <style>
+        table,th,tr,td
+        {
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+      </style>
+</head>
+
+<body>
+    <a href="#table"><button class="g_table">TABLE</button></a>
+    <br><br>
+      <form onsubmit="return false;">
+        Name of the User : <input type="text" name="uname" id="uname" required><br><br>
+        Name of the Sports : <input type="text" name="name" id="name" required>
+        <br><br>
+        Rating(10): <input type="text" name="rate" id="rate" required>
+        <br><br>
+        <button id="submit">ADD</button>
+      </form>
+
+      <br><br><br><br><br><br>
+      <button class="sort">SORT</button>
+      <br><br>
+      <table id="table">
+        <tr>
+            <th>NAME</th>
+            <th>SPORTS</th>
+            <th>Rating(10)</th>
+            <th>DELETE</th>
+        </tr>
+        <tbody id="tbody">
+
+        </tbody>
+      </table>
+
+      <script>
+            var name,m_name,rating;
+            $("#submit").click(e=>{
+                name=$("#uname").val();
+                sports=$("#name").val();
+                rating=$("#rate").val();
+                
+                if(name!="" && sports != "" && rating !=""){
+                $("table #tbody").append("<tr><td>"+name+"</td><td>"+sports+"</td><td>"+rating+"</td><td><button class='delete'>DELETE</button></td></tr>");
+                }
+            });
+
+            $("#table").on('click','.delete',function(event){
+                $(this).parents('tr').remove();
+                //or $(this).closest('tr').remove();
+
+            });
+
+
+
+      </script>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <form onsubmit="return false;">
+            <p>Add new Sport!</p>
+            <label for="sport">Sport Name: </label>
+            <input type="text" id="sport"><br>
+            <label for="rating">Rating: </label>
+            <input type="text" id="rating"><br>
+            <button id="addSport">Add</button>
+        </form>
+        <div id="dispAll"></div>
+        <button id="sortName">Sort By Name</button><br>
+        <button id="sortRating">Sort by Rating</button><br><br>
+        <script>
+            var sports=[];
+            function updateTable(){
+                var str="<table border='5' cellpadding='2'><tr><th>Sport Name</th><th>Rating</th><th>Delete</th></tr>";
+                for(var i= 0; i<sports.length; i++){
+                    var temp= "<tr><td>"+sports[i].name+"</td><td>"+ sports[i].rating+"</td><td><button class='deleteBtn' onclick='deleteSport("+ i +")'>Delete</button></td></tr>";
+                    str+= temp;
+                }
+                str+= "</table>";
+                $("#dispAll").html(str);
+            }
+            function deleteSport(i){
+                var spliced = sports.splice(i, 1); 
+                console.log(spliced+ " removed");
+                updateTable();
+            }
+            $("#addSport").click(function(){
+                var sport={name: "", rating: 0};
+                var sportname= $("#sport").val();
+                var rating= parseInt($("#rating").val());
+                sport.name= sportname;
+                sport.rating= rating;
+                sports.push(sport);
+                console.log(sport.name);
+                updateTable();
+            });
+            $("#dispAll").text(function(){
+                updateTable();
+            });
+            function sortByName(a, b){
+                var aName= a.name.toLowerCase();
+                var bName= b.name.toLowerCase();
+                return ((aName < bName) ? -1 : ((aName > bName) ? 1 : 0));
+            }
+            function sortByRating(a, b){
+                var arating= a.rating;
+                var brating= b.rating;
+                return ((arating < brating) ? 1 : ((arating > brating) ? -1 : 0));
+            }
+            $("#sortName").click(function(){
+                sports.sort(sortByName);
+                updateTable();
+            });
+            $("#sortRating").click(function(){
+                sports.sort(sortByRating);
+                updateTable();
+            });
+
+        </script>
+    </body>
+</html>
