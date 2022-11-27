@@ -44,7 +44,7 @@ public class Ping_Trace {
   public static void main(String[] args) throws UnknownHostException, IOException, Exception
   {
     
-    ArrayList<String> commandList = new ArrayList<String>();
+    ArrayList<String> commandList = new ArrayList<>();
     commandList.add("ping");
     
     System.out.println("\n\t\tPing and Trace program\n");
@@ -71,4 +71,4 @@ public class Ping_Trace {
 //133.192.31.42 - not accessible
 //145.154.42.58 - not accessible
     
-}
+

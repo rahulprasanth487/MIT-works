@@ -18,7 +18,6 @@ class FileTransfer
     void rec_file() throws Exception
     {
         Scanner in=new Scanner(System.in);
-//dout.writeUTF("R");
         System.out.println("File Name :");
         fname=in.nextLine();
         dout.writeUTF(fname);

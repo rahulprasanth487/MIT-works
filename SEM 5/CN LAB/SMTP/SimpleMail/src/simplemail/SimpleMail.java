@@ -35,7 +35,6 @@ public class SimpleMail {
 	}
 	private MimeMessage draftEmail(String recipient) throws MessagingException {
                 Scanner inp=new Scanner(System.in);
-		//String emailSubject = "Test Mail";
                 System.out.println("Enter the subject of the email = ");
                 String emailSubject=inp.nextLine();
 		mimeMessage = new MimeMessage(newSession);

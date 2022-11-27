@@ -1,6 +1,7 @@
 import java.net.*;
 import java.io.*;
 import java.util.*;
+
 class FileTransferServer
 {
       Socket soc;
@@ -21,8 +22,6 @@ class FileTransferServer
       void sendfile() throws Exception
       {
             Scanner in=new Scanner(System.in);
-            //dout.writeUTF("R");
-            //System.out.println("File Name :");
             fname=din.readUTF();
             System.out.println("File name :"+fname);
             recfile=new File(fname);
@@ -48,7 +47,6 @@ class FileTransferServer
             while(true)
             {
                   ch=fos.read();
-                  //ch=Integer.parseInt(filecon);
                   if(ch!=-1)
                   {
                   dout.writeUTF(String.valueOf(ch));
